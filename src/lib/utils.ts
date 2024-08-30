@@ -7,9 +7,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 import { createClient, AuthClient } from "@supabase/supabase-js";
+console.log(import.meta.env.PUBLIC_URL);
 
-const supabaseUrl = process.env.PUBLIC_URL;
-const supabaseKey = process.env.PRIVATE_KEY;
+const supabaseUrl = import.meta.env.VITE_PUBLIC_URL;
+const supabaseKey = import.meta.env.VITE_PRIVATE_KEY;
 const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
   auth: { autoRefreshToken: true },
 });
