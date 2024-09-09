@@ -71,11 +71,11 @@ const { slug }  = useParams();
         })
         .select();
 
-      await supabase.auth.updateUser({
-        data: {
-          name: "Prabin Subedi",
-        },
-      });
+      // await supabase.auth.updateUser({
+      //   data: {
+      //     name: "Prabin Subedi",
+      //   },
+      // });
 
       setOpen(false);
       setLoading(false);
@@ -211,7 +211,9 @@ const { slug }  = useParams();
 
               <div className="flex items-center justify-between mt-4">
                 {/* <div className="text-lg font-bold">$99</div> */}
-                <Button size="sm" variant="outline">
+                <Button
+                onClick={() => navigater(`/class/${classItem.id}`)}
+                size="sm" variant="outline">
                   View
                 </Button>
               </div>
